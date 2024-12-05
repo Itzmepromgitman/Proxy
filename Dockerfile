@@ -7,8 +7,8 @@ RUN apk --no-cache add dante-server
 # Copy the Dante configuration file
 COPY danted.conf /etc/danted.conf
 
-# Expose the SOCKS5 proxy port (default 1080)
+# Expose the SOCKS5 proxy port
 EXPOSE 1080
 
-# Run Dante in the foreground
-CMD ["sockd", "-N"]
+# Run Dante in daemon mode with proper arguments
+CMD ["sockd", "-f", "danted.conf", "-N", "1", "-D"]
