@@ -11,4 +11,4 @@ COPY danted.conf /etc/danted.conf
 EXPOSE 1080
 
 # Run Dante in daemon mode with proper arguments
-CMD ["sockd", "-f", "danted.conf", "-N", "1", "-D"]
+CMD ["sockd", "-f", "/etc/danted.conf", "-N", "1", "-D"]
